@@ -85,7 +85,7 @@ public class Director extends Employee {
 
     private void resetDeadline(int company) {
         PcProduct pc = HelpersFunctions.getTelevisionNetwork(company);
-        tv.setRemainingDays(app.getDeadline());
+        pc.setRemainingDays(app.getDeadline());
     }
 
     private void sendChaptersToTV() {
