@@ -36,11 +36,11 @@ public class Director extends Employee {
                 int remainingMinutes = oneHour - thirtyFiveMinutes;
 
                 // Se buscan los días restantes.
-                int remainingDays = this.company == 0 ? app.getNickelodeon().getRemainingDays()
-                        : app.getCartoonNetwork().getRemainingDays();
+                int remainingDays = this.company == 0 ? app.getApple().getRemainingDays()
+                        : app.getDell().getRemainingDays();
 
                 if (remainingDays <= 0) {
-                    this.setStatus("Enviando capítulos");
+                    this.setStatus("Enviando...");
 
                     this.getMutex().acquire();
                     // Se envian los capitulos
@@ -84,51 +84,51 @@ public class Director extends Employee {
     }
 
     private void resetDeadline(int company) {
-        PcProduct pc = HelpersFunctions.getTelevisionNetwork(company);
+        PcProduct pc = HelpersFunctions.getPcProduct(company);
         pc.setRemainingDays(app.getDeadline());
     }
 
     private void sendChaptersToTV() {
         try {
-            this.setStatus("Enviando capítulos");
+            this.setStatus("Enviando...");
 
             // Esperar un día completo (simulado)
             Thread.sleep(app.getDayDuration());
             // Se reinicia el deadline
             this.resetDeadline(this.company);
 
-            TelevisionNetwork tv = HelpersFunctions.getTelevisionNetwork(this.company);
+            PcProduct pc = HelpersFunctions.getPcProduct(this.company);
 
             // Enviamos los capitulos
-            tv.getDrive().resetChapters();
+            pc.getDrive().resetChapters();
 
             // Settiamos los valores actuales como los anteriores para estadisticas
-            tv.setLastNumChaptersWithPlotTwist(tv.getActualNumChaptersWithPlotTwist());
-            tv.setLastNumNormalChapters(tv.getActualNumNormalChapters());
+            pc.setLastNumChaptersWithPlotTwist(pc.getActualNumChaptersWithPlotTwist());
+            pc.setLastNumNormalChapters(pc.getActualNumNormalChapters());
 
             // Settiamos los valores actuales a 0
-            tv.setActualNumChaptersWithPlotTwist(0);
-            tv.setActualNumNormalChapters(0);
+            pc.setActualNumChaptersWithPlotTwist(0);
+            pc.setActualNumNormalChapters(0);
 
             // Settiamos el costo operacional del último batch
-            tv.setLastOpsCost(tv.getTotalCost() - tv.getLastOpsCost());
+            pc.setLastOpsCost(pc.getTotalCost() - pc.getLastOpsCost());
 
             // Calculamos las ganancias del último batch
-            calculateBatchLastProfit(tv);
+            calculateBatchLastProfit(pc);
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    private void calculateBatchLastProfit(TelevisionNetwork tv) {
-        float profit = (tv.getLastNumNormalChapters()
+    private void calculateBatchLastProfit(PcProduct pc) {
+        float profit = (pc.getLastNumNormalChapters()
                 * ImportantConstants.profitPerChapter[this.company][0])
-                + (tv.getNumChaptersWithPlotTwist()
+                + (pc.getNumChaptersWithPlotTwist()
                         * ImportantConstants.profitPerChapter[this.company][1])
-                - (tv.getLastOpsCost());
+                - (pc.getLastOpsCost());
 
-        tv.setBatchLastProfit(profit);
+        pc.setBatchLastProfit(profit);
     }
 
     private void performAdministrativeTasks() {
@@ -137,15 +137,15 @@ public class Director extends Employee {
 
     private void checkProjectManager() {
         this.status = "Vigilando PM";
-        TelevisionNetwork tv = HelpersFunctions.getTelevisionNetwork(this.company);
+        PcProduct pc = HelpersFunctions.getPcProduct(this.company);
 
-        if ("Viendo Anime".equals(tv.getProjectManagerInstance().getCurrentState())) {
+        if ("Viendo...".equals(pc.getProjectManagerInstance().getCurrentState())) {
 
             try {
                 // Pedimos permiso al mutex para poder reducir el salario del PM al costo total
                 this.getMutex().acquire();
-                tv.getProjectManagerInstance().addStrike();
-                tv.setTotalCost(tv.getTotalCost() - 100);
+                pc.getProjectManagerInstance().addStrike();
+                pc.setTotalCost(pc.getTotalCost() - 100);
                 // Se calcula las ganancias
                 HelpersFunctions.calculateTotalEarnings(this.company);
                 HelpersFunctions.calculateProfit(this.company);
