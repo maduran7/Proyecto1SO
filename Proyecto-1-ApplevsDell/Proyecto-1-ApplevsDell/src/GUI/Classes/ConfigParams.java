@@ -39,7 +39,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private int deadline;
 
     private void initializeValues() {
-        if (this.app.Dell() != null && this.app.getApple() != null) {
+        if (this.app.getDell() != null && this.app.getApple() != null) {
             this.maxEmployees = this.app.getApple().getMaxEmployeesQuantity();
             this.maxEmployees1 = this.app.getDell().getMaxEmployeesQuantity();
             this.actualEmployees1 = this.app.getApple().getActualEmployeesQuantity();

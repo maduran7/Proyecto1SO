@@ -9,6 +9,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
+import MainClasses.PcProduct;
+import MainPackage.App;
+
 /**
  *
  * @author aleja
@@ -151,7 +154,7 @@ public class FileFunctions {
 
         data += "DayDuration=" + dayDuration + "\n" + "Deadline=" + deadline + "\n\n";
 
-        data += "[Nickelodeon]\n";
+        data += "[Apple]\n";
         PcProduct apple = app.getApple();
         int screenwriters = apple.countNonNull(apple.getScreenwriters());
         int setDesigners = apple.countNonNull(apple.getSetDesigners());

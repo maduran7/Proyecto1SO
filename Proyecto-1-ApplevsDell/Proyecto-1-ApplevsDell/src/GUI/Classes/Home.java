@@ -547,14 +547,14 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_cargar_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cargar_guardarMouseClicked
         // TODO add your handling code here:
-        Nickelodeon v1 = new Nickelodeon();
+        Apple v1 = new Apple();
         v1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_cargar_guardarMouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        Nickelodeon v1 = new Nickelodeon();
+        Apple v1 = new Apple();
         v1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
@@ -595,14 +595,14 @@ public class Home extends javax.swing.JFrame {
 
     private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nueva_rutaMouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        Dell v2 = new Dell();
         v2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_nueva_rutaMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        Dell v2 = new Dell();
         v2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
