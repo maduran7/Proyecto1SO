@@ -41,7 +41,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+          <Color blue="d4" green="d3" red="d2" type="rgb"/>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[1130, 720]"/>
@@ -55,7 +55,7 @@
         <Container class="javax.swing.JPanel" name="SidePanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="0" type="rgb"/>
+              <Color blue="3c" green="2e" red="22" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -71,7 +71,7 @@
             <Container class="javax.swing.JPanel" name="btn_Inicio">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                  <Color blue="45" green="ac" red="f3" type="rgb"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -129,7 +129,7 @@
             <Container class="javax.swing.JPanel" name="btn_nuevo_pedido">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
+                  <Color blue="44" green="38" red="2d" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -188,7 +188,7 @@
             <Container class="javax.swing.JPanel" name="btn_nueva_ruta">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
+                  <Color blue="44" green="38" red="2d" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -258,7 +258,7 @@
             <Container class="javax.swing.JPanel" name="btn_nuevo_almacen">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
+                  <Color blue="44" green="38" red="2d" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -328,7 +328,7 @@
             <Container class="javax.swing.JPanel" name="btn_reporte">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
+                  <Color blue="44" green="38" red="2d" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -395,7 +395,7 @@
             <Container class="javax.swing.JPanel" name="btn_cargar_guardar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
+                  <Color blue="44" green="38" red="2d" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -505,7 +505,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="0" type="rgb"/>
+              <Color blue="3c" green="2e" red="22" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -540,7 +540,7 @@
             <Container class="javax.swing.JPanel" name="jPanel4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                  <Color blue="45" green="ac" red="f3" type="rgb"/>
                 </Property>
               </Properties>
               <Events>

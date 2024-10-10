@@ -39,11 +39,11 @@ public class Dell extends javax.swing.JFrame {
     private JButton[] decreaseBtn = new JButton[6];
     private JButton[] increaseBtn = new JButton[6];
     private int[] values = {
-        countNonNullEmployees(this.app.getDell().getScreenwriters()),
-        countNonNullEmployees(this.app.getDell().getSetDesigners()),
-        countNonNullEmployees(this.app.getDell().getCharacterAnimators()),
-        countNonNullEmployees(this.app.getDell().getVoiceActors()),
-        countNonNullEmployees(this.app.getDell().getPlotTwistScreenwriters()),
+        countNonNullEmployees(this.app.getDell().getMotherboard()),
+        countNonNullEmployees(this.app.getDell().getCPU()),
+        countNonNullEmployees(this.app.getDell().getRAM()),
+        countNonNullEmployees(this.app.getDell().getPSU()),
+        countNonNullEmployees(this.app.getDell().getGPU()),
         countNonNullEmployees(this.app.getDell().getAssemblers())
     };
     
@@ -75,11 +75,11 @@ public class Dell extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getDell().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getDell().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getDell().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getDell().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getDell().getPlotTwistScreenwriters());
+        values[0] = countNonNullEmployees(this.app.getDell().getMotherboard());
+        values[1] = countNonNullEmployees(this.app.getDell().getCPU());
+        values[2] = countNonNullEmployees(this.app.getDell().getRAM());
+        values[3] = countNonNullEmployees(this.app.getDell().getPSU());
+        values[4] = countNonNullEmployees(this.app.getDell().getGPU());
         values[5] = countNonNullEmployees(this.app.getDell().getAssemblers());
     }
 
@@ -107,7 +107,7 @@ public class Dell extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         initializeValues();
-        cartoonPlayMusic("/GUI/Assets/cartoonNetworkTheme.wav");
+        
         
 
         this.decreaseBtn[0] = decreaseScripts;
@@ -215,15 +215,15 @@ public class Dell extends javax.swing.JFrame {
             this.maxEmployees = this.app.getDell().getMaxEmployeesQuantity();
             this.actualEmployees = this.app.getDell().getActualEmployeesQuantity();
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getMotherboard())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getCPU())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getDell().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getRAM())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getPSU())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getDell().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getGPU())));
             this.assemblerValues
                     .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
@@ -528,7 +528,7 @@ public class Dell extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Cartoon Network");
+        jLabel6.setText("Dell");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -671,7 +671,7 @@ public class Dell extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Nickelodeon");
+        jLabel10.setText("Apple");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -754,14 +754,14 @@ public class Dell extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/cartoonLogo.png"))); // NOI18N
+        
 
         jPanel3.setBackground(new java.awt.Color(34, 46, 60));
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
 
         driveTitle4.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle4.setText("Capítulos plotTwist:");
+        driveTitle4.setText("Computadoras con GPU:");
         driveTitle4.setFocusable(false);
 
         plotTwistChapters.setEditable(false);
@@ -794,12 +794,12 @@ public class Dell extends javax.swing.JFrame {
 
         driveTitle5.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle5.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle5.setText("Capítulos normales:");
+        driveTitle5.setText("Computadoras Normales:");
         driveTitle5.setFocusable(false);
 
         driveTitle25.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle25.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle25.setText("Capítulos (total):");
+        driveTitle25.setText("Computadoras (total):");
         driveTitle25.setFocusable(false);
 
         totalChapters.setEditable(false);
@@ -1008,7 +1008,7 @@ public class Dell extends javax.swing.JFrame {
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("Guionistas:");
+        scriptsTitle.setText("Tarjeta Madre:");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1083,7 +1083,7 @@ public class Dell extends javax.swing.JFrame {
 
         scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("Escenarios:");
+        scenaryTitle.setText("CPU:");
 
         scenaryValue.setBackground(java.awt.Color.lightGray);
         scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1161,7 +1161,7 @@ public class Dell extends javax.swing.JFrame {
 
         animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("Animador:");
+        animationsTitle.setText("Memoria RAM:");
 
         animationValues.setBackground(java.awt.Color.lightGray);
         animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1238,7 +1238,7 @@ public class Dell extends javax.swing.JFrame {
 
         dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("Doblaje:");
+        dubbingTitle.setText("Fuente de Poder:");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1315,7 +1315,7 @@ public class Dell extends javax.swing.JFrame {
 
         plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("PlotTwist:");
+        plotTwistTitle.setText("Tarjeta de Video:");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1544,7 +1544,7 @@ public class Dell extends javax.swing.JFrame {
 
         scriptTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scriptTitle1.setText("Guiones:");
+        scriptTitle1.setText("Motherboards:");
 
         scriptsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1594,7 +1594,7 @@ public class Dell extends javax.swing.JFrame {
 
         scenaryTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle1.setText("Escenerarios:");
+        scenaryTitle1.setText("CPUs:");
 
         scenaryLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1644,7 +1644,7 @@ public class Dell extends javax.swing.JFrame {
 
         animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle1.setText("Animación:");
+        animationsTitle1.setText("RAMs:");
 
         animationsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1694,7 +1694,7 @@ public class Dell extends javax.swing.JFrame {
 
         dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle1.setText("Doblaje:");
+        dubbingTitle1.setText("PSUs:");
 
         dubbingLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1750,7 +1750,7 @@ public class Dell extends javax.swing.JFrame {
 
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("PlotTwist:");
+        plotTwistTitle1.setText("GPUs:");
 
         plotTwistDrive.setBackground(java.awt.Color.lightGray);
         plotTwistDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -2174,7 +2174,7 @@ public class Dell extends javax.swing.JFrame {
 
         driveTitle7.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle7.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle7.setText("Capítulos plotTwist:");
+        driveTitle7.setText("Computadoras con GPU:");
         driveTitle7.setFocusable(false);
 
         plotTwistChapters1.setBackground(new java.awt.Color(51, 51, 51));
@@ -2205,7 +2205,7 @@ public class Dell extends javax.swing.JFrame {
 
         driveTitle22.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle22.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle22.setText("Capítulos normales:");
+        driveTitle22.setText("Computadoras normales:");
         driveTitle22.setFocusable(false);
 
         driveTitle28.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -2274,7 +2274,7 @@ public class Dell extends javax.swing.JFrame {
 
         driveTitle20.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle20.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle20.setText("Capítulos plotTwist:");
+        driveTitle20.setText("Computadoras con GPU:");
         driveTitle20.setFocusable(false);
 
         plotTwistChapters2.setBackground(new java.awt.Color(51, 51, 51));
@@ -2305,7 +2305,7 @@ public class Dell extends javax.swing.JFrame {
 
         driveTitle24.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle24.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle24.setText("Capítulos normales:");
+        driveTitle24.setText("Computadoras normales:");
         driveTitle24.setFocusable(false);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -2690,7 +2690,6 @@ public class Dell extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (canIncreaseQuantity(1)) {
             this.scenaryValue.setText(increaseQuantity(this.scenaryValue.getText(), increaseScenary));
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             helper.addWorker(1, 1);
         }
         updateBtnStatus();

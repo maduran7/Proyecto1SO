@@ -14,11 +14,11 @@ public class PcProduct {
     private String name;
     private int maxEmployeesQuantity;
     private int actualEmployeesQuantity = 0;
-    private Employee[] screenwriters;
-    private Employee[] setDesigners;
-    private Employee[] characterAnimators;
-    private Employee[] voiceActors;
-    private Employee[] plotTwistScreenwriters;
+    private Employee[] Motherboard;
+    private Employee[] CPU;
+    private Employee[] RAM;
+    private Employee[] PSU;
+    private Employee[] GPU;
     private Employee[] Assemblers;
     private int projectManager;
     private ProjectManager projectManagerInstance;
@@ -44,16 +44,16 @@ public class PcProduct {
     private int plotTwistTrigger = 0;
 
     // CONSTRUCTOR
-    public PcProduct(String name, int maxEmployeesQuantity, Employee[] screenwriters, Employee[] setDesigners,
-            Employee[] characterAnimators, Employee[] voiceActors, Employee[] plotTwistScreenwriters,
+    public PcProduct(String name, int maxEmployeesQuantity, Employee[] Motherboard, Employee[] CPU,
+            Employee[] RAM, Employee[] PSU, Employee[] GPU,
             Employee[] Assemblers, int projectManager, int director, Drive drive, Semaphore mutex) {
         this.name = name;
         this.maxEmployeesQuantity = maxEmployeesQuantity;
-        this.screenwriters = screenwriters;
-        this.setDesigners = setDesigners;
-        this.characterAnimators = characterAnimators;
-        this.voiceActors = voiceActors;
-        this.plotTwistScreenwriters = plotTwistScreenwriters;
+        this.Motherboard = Motherboard;
+        this.CPU = CPU;
+        this.RAM = RAM;
+        this.PSU = PSU;
+        this.GPU = GPU;
         this.Assemblers = Assemblers;
         this.projectManager = projectManager;
         this.director = director;
@@ -64,29 +64,29 @@ public class PcProduct {
 
     public void start() {
 
-        for (int i = 0; i < this.getScreenwriters().length; i++) {
-            if (this.getScreenwriters()[i] != null) {
-                this.getScreenwriters()[i].start();
+        for (int i = 0; i < this.getMotherboard().length; i++) {
+            if (this.getMotherboard()[i] != null) {
+                this.getMotherboard()[i].start();
             }
         }
-        for (int i = 0; i < this.getSetDesigners().length; i++) {
-            if (this.getSetDesigners()[i] != null) {
-                this.getSetDesigners()[i].start();
+        for (int i = 0; i < this.getCPU().length; i++) {
+            if (this.getCPU()[i] != null) {
+                this.getCPU()[i].start();
             }
         }
-        for (int i = 0; i < this.getCharacterAnimators().length; i++) {
-            if (this.getCharacterAnimators()[i] != null) {
-                this.getCharacterAnimators()[i].start();
+        for (int i = 0; i < this.getRAM().length; i++) {
+            if (this.getRAM()[i] != null) {
+                this.getRAM()[i].start();
             }
         }
-        for (int i = 0; i < this.getVoiceActors().length; i++) {
-            if (this.getVoiceActors()[i] != null) {
-                this.getVoiceActors()[i].start();
+        for (int i = 0; i < this.getPSU().length; i++) {
+            if (this.getPSU()[i] != null) {
+                this.getPSU()[i].start();
             }
         }
-        for (int i = 0; i < this.getPlotTwistScreenwriters().length; i++) {
-            if (this.getPlotTwistScreenwriters()[i] != null) {
-                this.getPlotTwistScreenwriters()[i].start();
+        for (int i = 0; i < this.getGPU().length; i++) {
+            if (this.getGPU()[i] != null) {
+                this.getGPU()[i].start();
             }
         }
         for (int i = 0; i < this.getAssemblers().length; i++) {
@@ -103,11 +103,11 @@ public class PcProduct {
         int totalEmployees = 0;
 
         // Contar empleados no nulos en cada arreglo
-        totalEmployees += countNonNull(screenwriters);
-        totalEmployees += countNonNull(setDesigners);
-        totalEmployees += countNonNull(characterAnimators);
-        totalEmployees += countNonNull(voiceActors);
-        totalEmployees += countNonNull(plotTwistScreenwriters);
+        totalEmployees += countNonNull(Motherboard);
+        totalEmployees += countNonNull(CPU);
+        totalEmployees += countNonNull(RAM);
+        totalEmployees += countNonNull(PSU);
+        totalEmployees += countNonNull(GPU);
         totalEmployees += countNonNull(Assemblers);
 
         this.setActualEmployeesQuantity(totalEmployees);
@@ -153,73 +153,73 @@ public class PcProduct {
     }
 
     /**
-     * @return the screenwriters
+     * @return the Motherboard designers
      */
-    public Employee[] getScreenwriters() {
-        return screenwriters;
+    public Employee[] getMotherboard() {
+        return Motherboard;
     }
 
     /**
-     * @param screenwriters the screenwriters to set
+     * @param Motherboard the Motherboard to set
      */
-    public void setScreenwriters(Employee[] screenwriters) {
-        this.screenwriters = screenwriters;
+    public void setMotherboard(Employee[] Motherboard) {
+        this.Motherboard = Motherboard;
     }
 
     /**
-     * @return the setDesigners
+     * @return the CPU designers
      */
-    public Employee[] getSetDesigners() {
-        return setDesigners;
+    public Employee[] getCPU() {
+        return CPU;
     }
 
     /**
-     * @param setDesigners the setDesigners to set
+     * @param CPU the CPU designers to set
      */
-    public void setSetDesigners(Employee[] setDesigners) {
-        this.setDesigners = setDesigners;
+    public void setCPU(Employee[] CPU) {
+        this.CPU = CPU;
     }
 
     /**
-     * @return the characterAnimators
+     * @return the RAM designers
      */
-    public Employee[] getCharacterAnimators() {
-        return characterAnimators;
+    public Employee[] getRAM() {
+        return RAM;
     }
 
     /**
-     * @param characterAnimators the characterAnimators to set
+     * @param RAM the RAM designers to set
      */
-    public void setCharacterAnimators(Employee[] characterAnimators) {
-        this.characterAnimators = characterAnimators;
+    public void setRAM(Employee[] RAM) {
+        this.RAM = RAM;
     }
 
     /**
-     * @return the voiceActors
+     * @return the GPU designers
      */
-    public Employee[] getVoiceActors() {
-        return voiceActors;
+    public Employee[] getPSU() {
+        return PSU;
     }
 
     /**
-     * @param voiceActors the voiceActors to set
+     * @param PSU the PSU designers to set
      */
-    public void setVoiceActors(Employee[] voiceActors) {
-        this.voiceActors = voiceActors;
+    public void setPSU(Employee[] PSU) {
+        this.PSU = PSU;
     }
 
     /**
-     * @return the plotTwistScreenwriters
+     * @return the GPU designers
      */
-    public Employee[] getPlotTwistScreenwriters() {
-        return plotTwistScreenwriters;
+    public Employee[] getGPU() {
+        return GPU;
     }
 
     /**
-     * @param plotTwistScreenwriters the plotTwistScreenwriters to set
+     * @param GPU the GPU designers to set
      */
-    public void setPlotTwistScreenwriters(Employee[] plotTwistScreenwriters) {
-        this.plotTwistScreenwriters = plotTwistScreenwriters;
+    public void setGPU(Employee[] GPU) {
+        this.GPU = GPU;
     }
 
     /**

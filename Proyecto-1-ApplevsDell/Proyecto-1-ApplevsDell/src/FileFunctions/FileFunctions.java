@@ -14,7 +14,7 @@ import MainPackage.App;
 
 /**
  *
- * @author aleja
+ * @author Alejandro Djukic
  */
 public class FileFunctions {
     public static String read(File file) {
@@ -88,7 +88,6 @@ public class FileFunctions {
     public static int[] getPcProductValues(int company, String fileData) {
         int[] values = new int[9];
         int startIndex = 0;
-
         if (company == 0) {
             startIndex = fileData.indexOf("[Apple]");
         } else if (company == 1) {
@@ -130,7 +129,6 @@ public class FileFunctions {
                 }
             }
         }
-
         return values;
     }
 
@@ -156,11 +154,11 @@ public class FileFunctions {
 
         data += "[Apple]\n";
         PcProduct apple = app.getApple();
-        int screenwriters = apple.countNonNull(apple.getScreenwriters());
-        int setDesigners = apple.countNonNull(apple.getSetDesigners());
-        int characterAnimators = apple.countNonNull(apple.getCharacterAnimators());
-        int voiceActors = apple.countNonNull(apple.getVoiceActors());
-        int plotTwistScriptwriters = apple.countNonNull(apple.getPlotTwistScreenwriters());
+        int screenwriters = apple.countNonNull(apple.getMotherboard());
+        int setDesigners = apple.countNonNull(apple.getCPU());
+        int characterAnimators = apple.countNonNull(apple.getRAM());
+        int voiceActors = apple.countNonNull(apple.getPSU());
+        int plotTwistScriptwriters = apple.countNonNull(apple.getGPU());
         int assemblers = apple.countNonNull(apple.getAssemblers());
         int projectManager = apple.getProjectManager();
         int director = apple.getDirector();
@@ -173,11 +171,11 @@ public class FileFunctions {
 
         data += "[Dell]\n";
         PcProduct dell = app.getDell();
-        screenwriters = dell.countNonNull(dell.getScreenwriters());
-        setDesigners = dell.countNonNull(dell.getSetDesigners());
-        characterAnimators = dell.countNonNull(dell.getCharacterAnimators());
-        voiceActors = dell.countNonNull(dell.getVoiceActors());
-        plotTwistScriptwriters = dell.countNonNull(dell.getPlotTwistScreenwriters());
+        screenwriters = dell.countNonNull(dell.getMotherboard());
+        setDesigners = dell.countNonNull(dell.getCPU());
+        characterAnimators = dell.countNonNull(dell.getRAM());
+        voiceActors = dell.countNonNull(dell.getPSU());
+        plotTwistScriptwriters = dell.countNonNull(dell.getGPU());
         assemblers = dell.countNonNull(dell.getAssemblers());
         projectManager = dell.getProjectManager();
         director = dell.getDirector();

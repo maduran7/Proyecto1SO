@@ -20,13 +20,13 @@ import javax.swing.Timer;
 
 /**
  *
- * @author aleja
+ * @author Alejandro Djukic 
  */
 public class ChartManager {
     private final App app = App.getInstance();
-    private XYBrand brandApple;
-    private XYBrand brandDell;
-    private XYBrandCollection dataset;
+    private XYSeries brandApple;
+    private XYSeries brandDell;
+    private XYSeriesCollection dataset;
     private JFreeChart xyLineChart;
     private Timer updateTimer;
     
@@ -37,10 +37,10 @@ public class ChartManager {
     }
     
 
-    private void initializeSeries() {
-        brandApple = new XYBrand("Apple");
-        brandDell = new XYBrand("Dell");
-        dataset = new XYBrandCollection();
+    private void initializeBrand() {
+        brandApple = new XYSeries("Apple");
+        brandDell = new XYSeries("Dell");
+        dataset = new XYSeriesCollection();
         dataset.addSeries(brandApple);
         dataset.addSeries(brandDell);
     }

@@ -39,11 +39,11 @@ public class Apple extends javax.swing.JFrame {
     private JButton[] decreaseBtn = new JButton[6];
     private JButton[] increaseBtn = new JButton[6];
     private int[] values = {
-        countNonNullEmployees(this.app.getApple().getScreenwriters()),
-        countNonNullEmployees(this.app.getApple().getSetDesigners()),
-        countNonNullEmployees(this.app.getApple().getCharacterAnimators()),
-        countNonNullEmployees(this.app.getApple().getVoiceActors()),
-        countNonNullEmployees(this.app.getApple().getPlotTwistScreenwriters()),
+        countNonNullEmployees(this.app.getApple().getMotherboard()),
+        countNonNullEmployees(this.app.getApple().getCPU()),
+        countNonNullEmployees(this.app.getApple().getRAM()),
+        countNonNullEmployees(this.app.getApple().getPSU()),
+        countNonNullEmployees(this.app.getApple().getGPU()),
         countNonNullEmployees(this.app.getApple().getAssemblers())
     };
 
@@ -75,11 +75,11 @@ public class Apple extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getApple().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getApple().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getApple().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getApple().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getApple().getPlotTwistScreenwriters());
+        values[0] = countNonNullEmployees(this.app.getApple().getMotherboard());
+        values[1] = countNonNullEmployees(this.app.getApple().getCPU());
+        values[2] = countNonNullEmployees(this.app.getApple().getRAM());
+        values[3] = countNonNullEmployees(this.app.getApple().getPSU());
+        values[4] = countNonNullEmployees(this.app.getApple().getGPU());
         values[5] = countNonNullEmployees(this.app.getApple().getAssemblers());
     }
 
@@ -216,15 +216,15 @@ public class Apple extends javax.swing.JFrame {
             this.maxEmployees = this.app.getApple().getMaxEmployeesQuantity();
             this.actualEmployees = this.app.getApple().getActualEmployeesQuantity();
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getMotherboard())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getCPU())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getApple().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getRAM())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getPSU())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getApple().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getGPU())));
             this.assemblerValues
                     .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
@@ -252,17 +252,7 @@ public class Apple extends javax.swing.JFrame {
         return rounded + "K";
     }
 
-    private void cartoonPlayMusic(String path) {
-        try {
-            URL url = this.getClass().getResource(path);
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioIn);
-            clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
-        }
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -520,7 +510,7 @@ public class Apple extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cartoon Network");
+        jLabel6.setText("Dell");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -662,7 +652,7 @@ public class Apple extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Nickelodeon");
+        jLabel10.setText("Apple");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -744,14 +734,13 @@ public class Apple extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/nickelodeonImage (1).png"))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(34, 46, 60));
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
 
         driveTitle4.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle4.setText("Capítulos plotTwist:");
+        driveTitle4.setText("Computadoras con GPU:");
         driveTitle4.setFocusable(false);
 
         plotTwistChapters.setEditable(false);
@@ -784,12 +773,12 @@ public class Apple extends javax.swing.JFrame {
 
         driveTitle5.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle5.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle5.setText("Capítulos normales:");
+        driveTitle5.setText("Computadoras Normales:");
         driveTitle5.setFocusable(false);
 
         driveTitle25.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle25.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle25.setText("Capítulos (total):");
+        driveTitle25.setText("Computadoras (total):");
         driveTitle25.setFocusable(false);
 
         totalChapters.setEditable(false);
@@ -1003,7 +992,7 @@ public class Apple extends javax.swing.JFrame {
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("Guionistas:");
+        scriptsTitle.setText("Tarjetas Madre:");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1078,7 +1067,7 @@ public class Apple extends javax.swing.JFrame {
 
         scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("Escenarios:");
+        scenaryTitle.setText("CPUs:");
 
         scenaryValue.setBackground(java.awt.Color.lightGray);
         scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1156,7 +1145,7 @@ public class Apple extends javax.swing.JFrame {
 
         animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("Animador:");
+        animationsTitle.setText("Memorias RAM:");
 
         animationValues.setBackground(java.awt.Color.lightGray);
         animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1233,7 +1222,7 @@ public class Apple extends javax.swing.JFrame {
 
         dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("Doblaje:");
+        dubbingTitle.setText("Fuentes de Poder:");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1310,7 +1299,7 @@ public class Apple extends javax.swing.JFrame {
 
         plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("PlotTwist:");
+        plotTwistTitle.setText("Tarjetas de Video:");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1539,7 +1528,7 @@ public class Apple extends javax.swing.JFrame {
 
         scriptTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scriptTitle1.setText("Guiones:");
+        scriptTitle1.setText("Motherboard:");
 
         scriptsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1589,7 +1578,7 @@ public class Apple extends javax.swing.JFrame {
 
         scenaryTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle1.setText("Escenerarios:");
+        scenaryTitle1.setText("CPUs:");
         scenaryTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         scenaryLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1640,7 +1629,7 @@ public class Apple extends javax.swing.JFrame {
 
         animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle1.setText("Animación:");
+        animationsTitle1.setText("RAMs:");
         animationsTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         animationsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1691,7 +1680,7 @@ public class Apple extends javax.swing.JFrame {
 
         dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle1.setText("Doblaje:");
+        dubbingTitle1.setText("PSUs:");
         dubbingTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         dubbingLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1749,7 +1738,7 @@ public class Apple extends javax.swing.JFrame {
 
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("PlotTwist:");
+        plotTwistTitle1.setText("GPUs:");
         plotTwistTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         plotTwistDrive.setBackground(java.awt.Color.lightGray);
@@ -2179,7 +2168,7 @@ public class Apple extends javax.swing.JFrame {
 
         driveTitle7.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle7.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle7.setText("Capítulos plotTwist:");
+        driveTitle7.setText("Computadoras con GPU:");
         driveTitle7.setFocusable(false);
 
         plotTwistChapters1.setBackground(new java.awt.Color(51, 51, 51));
@@ -2210,7 +2199,7 @@ public class Apple extends javax.swing.JFrame {
 
         driveTitle22.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle22.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle22.setText("Capítulos normales:");
+        driveTitle22.setText("Computadoras normales:");
         driveTitle22.setFocusable(false);
 
         driveTitle28.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -2277,7 +2266,7 @@ public class Apple extends javax.swing.JFrame {
 
         driveTitle20.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle20.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle20.setText("Capítulos plotTwist:");
+        driveTitle20.setText("Computadoras con GPU:");
         driveTitle20.setFocusable(false);
 
         plotTwistChapters2.setBackground(new java.awt.Color(51, 51, 51));
@@ -2308,7 +2297,7 @@ public class Apple extends javax.swing.JFrame {
 
         driveTitle24.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle24.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle24.setText("Capítulos normales:");
+        driveTitle24.setText("Computadoras normales:");
         driveTitle24.setFocusable(false);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);

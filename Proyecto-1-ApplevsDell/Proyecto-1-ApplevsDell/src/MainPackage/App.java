@@ -127,7 +127,7 @@ public class App {
     }
 
     /**
-     * @return the cartoonNetwork
+     * @return dell
      */
     public PcProduct getDell() {
         return dell;
@@ -139,7 +139,7 @@ public class App {
     }
 
     /**
-     * @return the nickelodeon
+     * @return apple
      */
     public PcProduct getApple() {
         return apple;

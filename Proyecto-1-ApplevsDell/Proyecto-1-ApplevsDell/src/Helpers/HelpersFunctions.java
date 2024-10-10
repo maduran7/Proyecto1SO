@@ -34,20 +34,17 @@ public class HelpersFunctions {
             App.setDayDuration(params[0]);
             App.setDeadline(params[1]);
         }
-
         App app = App.getInstance();
         app.setApple(HelpersFunctions.createPcProduct(0));
         app.setDell(HelpersFunctions.createPcProduct(1));
 
     }
 
-    // NOTE - 0 para nickelodeon y 1 para cartoon network
+    // NOTE - 0 para apple y 1 para dell
     public static PcProduct createPcProduct (int company) {
         String fileData = FileFunctions.read(App.getSelectedFile());
-
         // Se obtiene los datos del TXT
         int[] pcProductValues = FileFunctions.getPcProductValues(company, fileData);
-
         if (pcProductValues != null && pcProductValues.length >= 9) {
 
             String name = ImportantConstants.companies[company];
@@ -156,15 +153,15 @@ public class HelpersFunctions {
     private Employee[] getEmployeesArrayByType(PcProduct product, int workerType) {
         switch (workerType) {
             case 0:
-                return product.getScreenwriters();
+                return product.getMotherboard();
             case 1:
-                return product.getSetDesigners();
+                return product.getCPU();
             case 2:
-                return product.getCharacterAnimators();
+                return product.getRAM();
             case 3:
-                return product.getVoiceActors();
+                return product.getPSU();
             case 4:
-                return product.getPlotTwistScreenwriters();
+                return product.getGPU();
             case 5:
                 return product.getAssemblers();
             default:
@@ -175,25 +172,25 @@ public class HelpersFunctions {
     private void setEmployeesArrayByType(PcProduct product, int workerType, Employee[] newEmployees) {
         switch (workerType) {
             case 0:
-                product.setScreenwriters(newEmployees);
+                product.setMotherboard(newEmployees);
                 break;
             case 1:
-                product.setSetDesigners(newEmployees);
+                product.setCPU(newEmployees);
                 break;
             case 2:
-                product.setCharacterAnimators(newEmployees);
+                product.setRAM(newEmployees);
                 break;
             case 3:
-                product.setVoiceActors(newEmployees);
+                product.setPSU(newEmployees);
                 break;
             case 4:
-                product.setPlotTwistScreenwriters(newEmployees);
+                product.setGPU(newEmployees);
                 break;
         }
     }
 
     public static void calculateTotalCost(int company, float accumulatedSalary) {
-        PcProduct tv = getPcproduct(company);
+        PcProduct tv = getPcProduct(company);
         tv.setTotalCost(tv.getTotalCost() + accumulatedSalary);
     }
 

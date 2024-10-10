@@ -92,14 +92,14 @@ public class Home extends javax.swing.JFrame {
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(210, 211, 212));
         jPanel1.setMinimumSize(new java.awt.Dimension(1130, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SidePanel.setBackground(new java.awt.Color(0, 153, 153));
+        SidePanel.setBackground(new java.awt.Color(34, 46, 60));
         SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_Inicio.setBackground(new java.awt.Color(153, 204, 255));
+        btn_Inicio.setBackground(new java.awt.Color(243, 172, 69));
 
         icono1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -130,7 +130,7 @@ public class Home extends javax.swing.JFrame {
 
         SidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 330, 60));
 
-        btn_nuevo_pedido.setBackground(new java.awt.Color(0, 153, 153));
+        btn_nuevo_pedido.setBackground(new java.awt.Color(45, 56, 68));
         btn_nuevo_pedido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_nuevo_pedidoMouseClicked(evt);
@@ -169,7 +169,7 @@ public class Home extends javax.swing.JFrame {
 
         SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 330, 60));
 
-        btn_nueva_ruta.setBackground(new java.awt.Color(0, 153, 153));
+        btn_nueva_ruta.setBackground(new java.awt.Color(45, 56, 68));
         btn_nueva_ruta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_nueva_rutaMouseClicked(evt);
@@ -216,7 +216,7 @@ public class Home extends javax.swing.JFrame {
 
         SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 330, 60));
 
-        btn_nuevo_almacen.setBackground(new java.awt.Color(0, 153, 153));
+        btn_nuevo_almacen.setBackground(new java.awt.Color(45, 56, 68));
         btn_nuevo_almacen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_nuevo_almacenMouseClicked(evt);
@@ -264,7 +264,7 @@ public class Home extends javax.swing.JFrame {
 
         SidePanel.add(btn_nuevo_almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 330, 60));
 
-        btn_reporte.setBackground(new java.awt.Color(0, 153, 153));
+        btn_reporte.setBackground(new java.awt.Color(45, 56, 68));
         btn_reporte.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_reporteMouseClicked(evt);
@@ -310,7 +310,7 @@ public class Home extends javax.swing.JFrame {
 
         SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 330, 60));
 
-        btn_cargar_guardar.setBackground(new java.awt.Color(0, 153, 153));
+        btn_cargar_guardar.setBackground(new java.awt.Color(45, 56, 68));
         btn_cargar_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_cargar_guardarMouseClicked(evt);
@@ -370,9 +370,9 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(34, 46, 60));
 
-        jPanel4.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(243, 172, 69));
         jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel4MouseDragged(evt);

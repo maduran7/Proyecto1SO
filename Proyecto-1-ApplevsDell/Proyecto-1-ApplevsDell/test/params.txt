@@ -2,25 +2,25 @@
 DayDuration=2000
 Deadline=30
 
-[Nickelodeon]
-Screenwriters=5
-SetDesigners=4
-CharacterAnimators=3
-VoiceActors=1
-PlotTwistScriptwriters=1
+[Apple]
+Motherboard=3
+CPU=3
+RAM=2
+PSU=1
+GPU=1
 Assemblers=1
 ProjectManager=1
 Director=1
-MaxCapacity=15
+MaxCapacity=13
 
-[CartoonNetwork]
-Screenwriters=1
-SetDesigners=1
-CharacterAnimators=1
-VoiceActors=1
-PlotTwistScriptwriters=1
+[Dell]
+Motherboard=3
+CPU=3
+RAM=1
+PSU=1
+GPU=1
 Assemblers=1
 ProjectManager=1
 Director=1
-MaxCapacity=18
+MaxCapacity=12
 

@@ -6,7 +6,7 @@ package Helpers;
 
 /**
  *
- * @author angel
+ * @author Mauricio Duran 
  */
 public class ImportantConstants {
 
@@ -41,8 +41,8 @@ public class ImportantConstants {
     // FIXME - Revisar los tiempos de producción (El carnet)
    
     public final static int[][][] productionTimes = {
-        {{1, 3}, {1, 3}, {2, 1}, {3, 1}, {1, 3}, {1, 2}},
-        {{1, 4}, {1, 4}, {1, 1}, {5, 1}, {1, 2}, {1, 2}}
+        {{1, 2}, {1, 2}, {3, 1}, {3, 1}, {1, 3}, {1, 2}},
+        {{1, 2}, {1, 2}, {3, 1}, {3, 1}, {1, 3}, {1, 2}}
     };
 
     public final static int[][] chaptersComposition = {

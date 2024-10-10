@@ -50,28 +50,28 @@ public class ConfigParams extends javax.swing.JFrame {
             this.deadlineValue.setText(String.valueOf(deadline));
 
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getMotherboard())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getCPU())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getApple().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getRAM())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getPSU())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getApple().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getGPU())));
             this.assemblerValues
                     .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getAssemblers())));
 
             this.scriptsValues1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getMotherboard())));
             this.scenaryValue1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getCPU())));
             this.animationValues1.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getDell().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getRAM())));
             this.dubbingValues1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getPSU())));
             this.plotTwistValues1.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getDell().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getGPU())));
             this.assemblerValues1
                     .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
@@ -130,11 +130,11 @@ public class ConfigParams extends javax.swing.JFrame {
     private JButton[] increaseBtn = new JButton[6];
 
     private int[] values = {
-            countNonNullEmployees(this.app.getApple().getScreenwriters()),
-            countNonNullEmployees(this.app.getApple().getSetDesigners()),
-            countNonNullEmployees(this.app.getApple().getCharacterAnimators()),
-            countNonNullEmployees(this.app.getApple().getVoiceActors()),
-            countNonNullEmployees(this.app.getApple().getPlotTwistScreenwriters()),
+            countNonNullEmployees(this.app.getApple().getMotherboard()),
+            countNonNullEmployees(this.app.getApple().getCPU()),
+            countNonNullEmployees(this.app.getApple().getRAM()),
+            countNonNullEmployees(this.app.getApple().getPSU()),
+            countNonNullEmployees(this.app.getApple().getGPU()),
             countNonNullEmployees(this.app.getApple().getAssemblers())
     };
 
@@ -142,11 +142,11 @@ public class ConfigParams extends javax.swing.JFrame {
     private JButton[] increaseBtn1 = new JButton[6];
 
     private int[] values1 = {
-            countNonNullEmployees(this.app.getDell().getScreenwriters()),
-            countNonNullEmployees(this.app.getDell().getSetDesigners()),
-            countNonNullEmployees(this.app.getDell().getCharacterAnimators()),
-            countNonNullEmployees(this.app.getDell().getVoiceActors()),
-            countNonNullEmployees(this.app.getDell().getPlotTwistScreenwriters()),
+            countNonNullEmployees(this.app.getDell().getMotherboard()),
+            countNonNullEmployees(this.app.getDell().getCPU()),
+            countNonNullEmployees(this.app.getDell().getRAM()),
+            countNonNullEmployees(this.app.getDell().getPSU()),
+            countNonNullEmployees(this.app.getDell().getGPU()),
             countNonNullEmployees(this.app.getDell().getAssemblers())
     };
 
@@ -205,20 +205,20 @@ public class ConfigParams extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getApple().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getApple().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getApple().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getApple().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getApple().getPlotTwistScreenwriters());
+        values[0] = countNonNullEmployees(this.app.getApple().getMotherboard());
+        values[1] = countNonNullEmployees(this.app.getApple().getCPU());
+        values[2] = countNonNullEmployees(this.app.getApple().getRAM());
+        values[3] = countNonNullEmployees(this.app.getApple().getPSU());
+        values[4] = countNonNullEmployees(this.app.getApple().getGPU());
         values[5] = countNonNullEmployees(this.app.getApple().getAssemblers());
     }
 
     private void updateValues1() {
-        values1[0] = countNonNullEmployees(this.app.getDell().getScreenwriters());
-        values1[1] = countNonNullEmployees(this.app.getDell().getSetDesigners());
-        values1[2] = countNonNullEmployees(this.app.getDell().getCharacterAnimators());
-        values1[3] = countNonNullEmployees(this.app.getDell().getVoiceActors());
-        values1[4] = countNonNullEmployees(this.app.getDell().getPlotTwistScreenwriters());
+        values1[0] = countNonNullEmployees(this.app.getDell().getMotherboard());
+        values1[1] = countNonNullEmployees(this.app.getDell().getCPU());
+        values1[2] = countNonNullEmployees(this.app.getDell().getRAM());
+        values1[3] = countNonNullEmployees(this.app.getDell().getPSU());
+        values1[4] = countNonNullEmployees(this.app.getDell().getGPU());
         values1[5] = countNonNullEmployees(this.app.getDell().getAssemblers());
     }
 
@@ -500,7 +500,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cartoon Network");
+        jLabel6.setText("Dell");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -546,7 +546,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Nickelodeon");
+        jLabel7.setText("Apple");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -941,7 +941,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("Guionistas:");
+        scriptsTitle.setText("Motherboard:");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1017,7 +1017,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("Escenarios:");
+        scenaryTitle.setText("CPUs:");
 
         scenaryValue.setBackground(java.awt.Color.lightGray);
         scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1098,7 +1098,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("Animador:");
+        animationsTitle.setText("RAMs:");
 
         animationValues.setBackground(java.awt.Color.lightGray);
         animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1178,7 +1178,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("Doblaje:");
+        dubbingTitle.setText("PSU:");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1256,7 +1256,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("PlotTwist:");
+        plotTwistTitle.setText("GPU:");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1413,7 +1413,7 @@ public class ConfigParams extends javax.swing.JFrame {
         driveTitle21.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         driveTitle21.setForeground(new java.awt.Color(51, 51, 51));
         driveTitle21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle21.setText("Nickelodeon");
+        driveTitle21.setText("Apple");
 
         driveTitle27.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
         driveTitle27.setForeground(new java.awt.Color(51, 51, 51));
@@ -1495,7 +1495,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         scriptsTitle2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle2.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle2.setText("Guionistas:");
+        scriptsTitle2.setText("Motherboard:");
 
         increaseScripts1.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1571,7 +1571,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         scenaryTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle1.setText("Escenarios:");
+        scenaryTitle1.setText("CPUs:");
 
         scenaryValue1.setBackground(java.awt.Color.lightGray);
         scenaryValue1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1652,7 +1652,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle1.setText("Animador:");
+        animationsTitle1.setText("RAMs:");
 
         animationValues1.setBackground(java.awt.Color.lightGray);
         animationValues1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1732,7 +1732,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle1.setText("Doblaje:");
+        dubbingTitle1.setText("PSUs:");
 
         decreaseDubbing1.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1810,7 +1810,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("PlotTwist:");
+        plotTwistTitle1.setText("GPUs:");
 
         increasePlotTwist1.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1967,7 +1967,7 @@ public class ConfigParams extends javax.swing.JFrame {
         driveTitle22.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         driveTitle22.setForeground(new java.awt.Color(51, 51, 51));
         driveTitle22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle22.setText("Cartoon Network");
+        driveTitle22.setText("Dell");
 
         driveTitle28.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
         driveTitle28.setForeground(new java.awt.Color(51, 51, 51));
@@ -2294,7 +2294,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseScriptsMouseClicked
         // TODO add your handling code here:
         if (this.canIncreaseQuantity(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.scriptsValues.setText(increaseQuantity(this.scriptsValues.getText(), increaseScripts));
             helper.addWorker(0, 0);
         }
@@ -2313,7 +2313,7 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         updateValues();
         if (canDecreaseQuantity(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.scriptsValues.setText(decreaseQuantity(this.scriptsValues.getText(), this.decreaseScripts));
             helper.deleteWorker(0, 0);
         }
@@ -2332,7 +2332,7 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (canIncreaseQuantity(1)) {
             this.scenaryValue.setText(increaseQuantity(this.scenaryValue.getText(), increaseScenary));
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             helper.addWorker(0, 1);
         }
         updateBtnStatus();
@@ -2345,7 +2345,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseScenaryMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(1)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.scenaryValue.setText(decreaseQuantity(this.scenaryValue.getText(), decreaseScenary));
             helper.deleteWorker(0, 1);
         }
@@ -2363,7 +2363,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseAnimationMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.animationValues.setText(decreaseQuantity(this.animationValues.getText(), decreaseAnimation));
             helper.deleteWorker(0, 2);
         }
@@ -2377,7 +2377,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAnimationMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.animationValues.setText(increaseQuantity(this.animationValues.getText(), increaseAnimation));
             helper.addWorker(0, 2);
         }
@@ -2391,7 +2391,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseDubbingMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.dubbingValues.setText(decreaseQuantity(this.dubbingValues.getText(), decreaseDubbing));
             helper.deleteWorker(0, 3);
         }
@@ -2409,7 +2409,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseDubbingMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.dubbingValues.setText(increaseQuantity(this.dubbingValues.getText(), increaseDubbing));
             helper.addWorker(0, 3);
         }
@@ -2423,7 +2423,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increasePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increasePlotTwistMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.plotTwistValues.setText(increaseQuantity(this.plotTwistValues.getText(), increasePlotTwist));
             helper.addWorker(0, 4);
         }
@@ -2441,7 +2441,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreacePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreacePlotTwistMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.plotTwistValues.setText(decreaseQuantity(this.plotTwistValues.getText(), decreacePlotTwist));
             helper.deleteWorker(0, 4);
         }
@@ -2455,7 +2455,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAssemblerMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
             helper.addWorker(0, 5);
         }
@@ -2473,7 +2473,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaceAssemblerMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
             helper.deleteWorker(0, 5);
         }
@@ -2487,7 +2487,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseScripts1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseScripts1MouseClicked
         // TODO add your handling code here:
         if (this.canIncreaseQuantity1(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.scriptsValues1.setText(increaseQuantity1(this.scriptsValues1.getText(), increaseScripts1));
             helper.addWorker(1, 0);
         }
@@ -2506,7 +2506,7 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         updateValues1();
         if (canDecreaseQuantity1(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.scriptsValues1.setText(decreaseQuantity1(this.scriptsValues1.getText(), this.decreaseScripts1));
             helper.deleteWorker(1, 0);
         }
@@ -2525,7 +2525,7 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (canIncreaseQuantity1(1)) {
             this.scenaryValue1.setText(increaseQuantity1(this.scenaryValue1.getText(), increaseScenary1));
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             helper.addWorker(1, 1);
         }
         updateBtnStatus1();
@@ -2538,7 +2538,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseScenary1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseScenary1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(1)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.scenaryValue1.setText(decreaseQuantity1(this.scenaryValue1.getText(), decreaseScenary1));
             helper.deleteWorker(1, 1);
         }
@@ -2556,7 +2556,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseAnimation1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseAnimation1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.animationValues1.setText(decreaseQuantity1(this.animationValues1.getText(), decreaseAnimation1));
             helper.deleteWorker(1, 2);
         }
@@ -2570,7 +2570,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAnimation1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAnimation1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.animationValues1.setText(increaseQuantity1(this.animationValues1.getText(), increaseAnimation1));
             helper.addWorker(1, 2);
         }
@@ -2584,7 +2584,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseDubbing1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseDubbing1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.dubbingValues1.setText(decreaseQuantity1(this.dubbingValues1.getText(), decreaseDubbing1));
             helper.deleteWorker(1, 3);
         }
@@ -2602,7 +2602,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseDubbing1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseDubbing1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.dubbingValues1.setText(increaseQuantity1(this.dubbingValues1.getText(), increaseDubbing1));
             helper.addWorker(1, 3);
         }
@@ -2616,7 +2616,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increasePlotTwist1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increasePlotTwist1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.plotTwistValues1.setText(increaseQuantity1(this.plotTwistValues1.getText(), increasePlotTwist1));
             helper.addWorker(1, 4);
         }
@@ -2634,7 +2634,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreacePlotTwist1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreacePlotTwist1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.plotTwistValues1.setText(decreaseQuantity1(this.plotTwistValues1.getText(), decreacePlotTwist1));
             helper.deleteWorker(1, 4);
         }
@@ -2648,7 +2648,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAssembler1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAssembler1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.assemblerValues1.setText(increaseQuantity1(this.assemblerValues1.getText(), increaseAssembler1));
             helper.addWorker(1, 5);
         }
@@ -2666,7 +2666,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaceAssembler1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaceAssembler1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
+            
             this.assemblerValues1.setText(decreaseQuantity1(this.assemblerValues1.getText(), decreaceAssembler1));
             helper.deleteWorker(1, 5);
         }

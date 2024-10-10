@@ -32,8 +32,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private Point initialClick;
     private final App app = App.getInstance();
-    private XYBrand brandApple;
-    private XYBrand brandDell;
+    private XYSeries brandApple;
+    private XYSeries brandDell;
     private Timer updateTimer;
     private static Dashboard instance;
 
@@ -283,7 +283,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cartoon Network");
+        jLabel6.setText("Dell");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -423,7 +423,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Nickelodeon");
+        jLabel10.setText("Apple");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -548,7 +548,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         driveTitle9.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle9.setForeground(java.awt.Color.black);
-        driveTitle9.setText("CARTOON NETWORK");
+        driveTitle9.setText("DELL");
         driveTitle9.setFocusable(false);
         jPanel1.add(driveTitle9, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 590, -1, -1));
 
@@ -685,7 +685,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         driveTitle15.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle15.setForeground(java.awt.Color.black);
-        driveTitle15.setText("NICKELODEON");
+        driveTitle15.setText("APPLE");
         driveTitle15.setFocusable(false);
         jPanel1.add(driveTitle15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 590, -1, -1));
 
@@ -795,17 +795,7 @@ public class Dashboard extends javax.swing.JFrame {
         this.dispose();
     }                                    
 
-    private void cartoonPlayMusic(String path) {
-        try {
-            URL url = this.getClass().getResource(path);
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioIn);
-            clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
-        }
-    }
+    
     private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {                                            
         // TODO add your handling code here:
         Dell v2 = new Dell();
