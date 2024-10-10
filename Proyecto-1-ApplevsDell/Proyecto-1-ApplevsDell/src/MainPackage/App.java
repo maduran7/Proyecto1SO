@@ -5,27 +5,36 @@
 package MainPackage;
 
 import GUI.Classes.Home;
+import FileFunctions.FileFunctions;
+import GUI.Classes.ChartManager;
+import Helpers.HelpersFunctions;
+import MainClasses.PcProduct;
+import java.io.File;
 
 /**
  *
- * @author Mauricio Duran, Alejandro 
+ * @author Mauricio Duran & Alejandro Djukic 
  */
 public class App {
 
     // FIle params
     private static String selectedPath = "test//params.txt";
+    private static File selectedFile = new File(selectedPath);
+    private static FileFunctions fileFunctions = new FileFunctions();
+
     // General params
     private static int dayDuration;
     private static int deadline;
 
+    // General variables
+    private PcProduct dell;
+    private PcProduct apple;
+    private static ChartManager chartManager;
+
 
     private static App app;
 
-    /**
-     * Devuelve una instancia única de la aplicación.
-     *
-     * @return La instancia única de la aplicación.
-     */
+    
     public static synchronized App getInstance() {
         if (getApp() == null) {
             setApp(new App());
@@ -35,6 +44,14 @@ public class App {
 
     public void start() {
         
+        HelpersFunctions.loadParams();
+        
+        // Inicia la simulacion
+        getApple().start();
+        getDell().start();
+        chartManager = new ChartManager();
+
+
         Home home = new Home();
         home.setVisible(true);
     }
@@ -56,20 +73,30 @@ public class App {
     /**
      * @return the selectedFile
      */
-
+    public static File getSelectedFile() {
+        return selectedFile;
+    }
 
     /**
      * @param aSelectedFile the selectedFile to set
      */
+    public static void setSelectedFile(File aSelectedFile) {
+        selectedFile = aSelectedFile;
+    }
 
     /**
      * @return the fileFunctions
      */
-
+    public static FileFunctions getFileFunctions() {
+        return fileFunctions;
+    }
 
     /**
      * @param aFileFunctions the fileFunctions to set
      */
+    public static void setFileFunctions(FileFunctions aFileFunctions) {
+        fileFunctions = aFileFunctions;
+    }
 
     /**
      * @return the dayDuration
@@ -99,6 +126,29 @@ public class App {
         deadline = aDeadline;
     }
 
+    /**
+     * @return dell
+     */
+    public PcProduct getDell() {
+        return dell;
+    }
+
+    
+    public void setDell(PcProduct dell) {
+        this.dell = dell;
+    }
+
+    /**
+     * @return apple
+     */
+    public PcProduct getApple() {
+        return apple;
+    }
+
+    
+    public void setApple(PcProduct apple) {
+        this.apple = apple;
+    }
 
     /**
      * @return the app
@@ -114,5 +164,9 @@ public class App {
         app = aApp;
     }
 
+     public static ChartManager getChartManager() {
+        return chartManager;
+    }
+  
 
 }

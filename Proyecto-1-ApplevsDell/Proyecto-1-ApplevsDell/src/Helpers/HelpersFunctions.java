@@ -10,7 +10,7 @@ import FileFunctions.FileFunctions;
 import Helpers.ImportantConstants;
 import MainClasses.Director;
 import MainClasses.Drive;
-import MainClasses.TelevisionNetwork;
+import MainClasses.PcProduct;
 import MainPackage.App;
 import java.util.concurrent.Semaphore;
 
@@ -20,8 +20,8 @@ import java.util.concurrent.Semaphore;
  */
 public class HelpersFunctions {
 
-    public static TelevisionNetwork getTelevisionNetwork(int company) {
-        return company == 0 ? App.getInstance().getNickelodeon() : App.getInstance().getCartoonNetwork();
+    public static PcProduct getPcProduct(int company) {
+        return company == 0 ? App.getInstance().getApple() : App.getInstance().getDell();
     }
 
     public static void loadParams() {
@@ -34,21 +34,18 @@ public class HelpersFunctions {
             App.setDayDuration(params[0]);
             App.setDeadline(params[1]);
         }
-
         App app = App.getInstance();
-        app.setNickelodeon(HelpersFunctions.createTelevisionNetwork(0));
-        app.setCartoonNetwork(HelpersFunctions.createTelevisionNetwork(1));
+        app.setApple(HelpersFunctions.createPcProduct(0));
+        app.setDell(HelpersFunctions.createPcProduct(1));
 
     }
 
-    // NOTE - 0 para nickelodeon y 1 para cartoon network
-    public static TelevisionNetwork createTelevisionNetwork(int company) {
+    // NOTE - 0 para apple y 1 para dell
+    public static PcProduct createPcProduct (int company) {
         String fileData = FileFunctions.read(App.getSelectedFile());
-
         // Se obtiene los datos del TXT
-        int[] televisionNetworkValues = FileFunctions.getTelevisionNetworkValues(company, fileData);
-
-        if (televisionNetworkValues != null && televisionNetworkValues.length >= 9) {
+        int[] pcProductValues = FileFunctions.getPcProductValues(company, fileData);
+        if (pcProductValues != null && pcProductValues.length >= 9) {
 
             String name = ImportantConstants.companies[company];
             Employee[][] workers = new Employee[6][];
@@ -56,13 +53,13 @@ public class HelpersFunctions {
             Drive drive = new Drive(25, 20, 55, 35, 10);
             int projectManager = 1;
             int director = 1;
-            int maxEmployees = televisionNetworkValues[8];
+            int maxEmployees = pcProductValues[8];
 
             // Se crean los empleados de cada sección
             for (int type = 0; type <= 5; type++) {
                 Employee[] employees = new Employee[maxEmployees];
 
-                for (int j = 0; j < televisionNetworkValues[type]; j++) {
+                for (int j = 0; j < pcProductValues[type]; j++) {
                     int workerId = j + 1;
                     int numOfWorkDone = ImportantConstants.productionTimes[company][type][0];
                     int daysToFinish = ImportantConstants.productionTimes[company][type][1];
@@ -72,18 +69,18 @@ public class HelpersFunctions {
                 }
                 workers[type] = employees;
             }
-            TelevisionNetwork network = new TelevisionNetwork(name, maxEmployees, workers[0], workers[1], workers[2],
+            PcProduct product = new PcProduct (name, maxEmployees, workers[0], workers[1], workers[2],
                     workers[3], workers[4],
                     workers[5], projectManager, director, drive, mutex);
 
             // Se crea al projectManager y al director, se les pasa la cadena televisiva.
             ProjectManager projectManagerInstance = new ProjectManager(company, 1, 5, 1, 1,
                     ImportantConstants.hourlyWages[5], drive, mutex);
-            network.setProjectManagerInstance(projectManagerInstance);
+            product.setProjectManagerInstance(projectManagerInstance);
             Director directorInstance = new Director(company, 1, 6, 2, 1, ImportantConstants.hourlyWages[6], drive,
                     mutex);
-            network.setDirectorInstance(directorInstance);
-            return network;
+            product.setDirectorInstance(directorInstance);
+            return product;
 
         }
         return null;
@@ -91,21 +88,21 @@ public class HelpersFunctions {
 
     public void addWorker(int company, int workerType) {
 
-        TelevisionNetwork network = company == 0 ? App.getInstance().getNickelodeon()
-                : App.getInstance().getCartoonNetwork();
+        PcProduct product = company == 0 ? App.getInstance().getApple()
+                : App.getInstance().getApple();
 
         // Se verifica si la cantidad actual de empleados es menor que la cantidad
         // máxima permitida
-        if (network.getActualEmployeesQuantity() < network.getMaxEmployeesQuantity()) {
-            Employee[] employees = getEmployeesArrayByType(network, workerType);
+        if (product.getActualEmployeesQuantity() < product.getMaxEmployeesQuantity()) {
+            Employee[] employees = getEmployeesArrayByType(product, workerType);
 
             // Se crea nuevo empleado
-            int workerId = network.getActualEmployeesQuantity() + 1;
+            int workerId = product.getActualEmployeesQuantity() + 1;
             int daysToFinish = ImportantConstants.productionTimes[company][workerType][1];
             int numOfWorkDone = ImportantConstants.productionTimes[company][workerType][0];
             int hourlyWage = ImportantConstants.hourlyWages[workerType];
             Employee newEmployee = new Employee(company, workerId, workerType, daysToFinish, numOfWorkDone, hourlyWage,
-                    network.getDrive(), network.getMutex());
+                    product.getDrive(), product.getMutex());
 
             // Se inicia el hilo del nuevo empleado
             newEmployee.start();
@@ -115,7 +112,7 @@ public class HelpersFunctions {
             for (int i = 0; i < employees.length; i++) {
                 if (employees[i] == null) {
                     employees[i] = newEmployee;
-                    network.setActualEmployeesQuantity(network.getActualEmployeesQuantity() + 1);
+                    product.setActualEmployeesQuantity(product.getActualEmployeesQuantity() + 1);
                     // Actualizar la cantidad de empleados
                     break;
                 }
@@ -126,11 +123,11 @@ public class HelpersFunctions {
     }
 
     public void deleteWorker(int company, int workerType) {
-        TelevisionNetwork network = HelpersFunctions.getTelevisionNetwork(company);
+        PcProduct product = HelpersFunctions.getPcProduct(company);
 
         // Verifica si hay empleados para eliminar
-        if (network.getActualEmployeesQuantity() > 0) {
-            Employee[] employees = getEmployeesArrayByType(network, workerType);
+        if (product.getActualEmployeesQuantity() > 0) {
+            Employee[] employees = getEmployeesArrayByType(product, workerType);
 
             if (employees != null) {
                 // Buscar el último empleado no nulo
@@ -143,7 +140,7 @@ public class HelpersFunctions {
                         employees[i] = null;
 
                         // Actualiza la cantidad de empleados
-                        network.setActualEmployeesQuantity(network.getActualEmployeesQuantity() - 1);
+                        product.setActualEmployeesQuantity(product.getActualEmployeesQuantity() - 1);
                         break;
                     }
                 }
@@ -153,60 +150,60 @@ public class HelpersFunctions {
         }
     }
 
-    private Employee[] getEmployeesArrayByType(TelevisionNetwork network, int workerType) {
+    private Employee[] getEmployeesArrayByType(PcProduct product, int workerType) {
         switch (workerType) {
             case 0:
-                return network.getScreenwriters();
+                return product.getMotherboard();
             case 1:
-                return network.getSetDesigners();
+                return product.getCPU();
             case 2:
-                return network.getCharacterAnimators();
+                return product.getRAM();
             case 3:
-                return network.getVoiceActors();
+                return product.getPSU();
             case 4:
-                return network.getPlotTwistScreenwriters();
+                return product.getGPU();
             case 5:
-                return network.getAssemblers();
+                return product.getAssemblers();
             default:
                 return null;
         }
     }
 
-    private void setEmployeesArrayByType(TelevisionNetwork network, int workerType, Employee[] newEmployees) {
+    private void setEmployeesArrayByType(PcProduct product, int workerType, Employee[] newEmployees) {
         switch (workerType) {
             case 0:
-                network.setScreenwriters(newEmployees);
+                product.setMotherboard(newEmployees);
                 break;
             case 1:
-                network.setSetDesigners(newEmployees);
+                product.setCPU(newEmployees);
                 break;
             case 2:
-                network.setCharacterAnimators(newEmployees);
+                product.setRAM(newEmployees);
                 break;
             case 3:
-                network.setVoiceActors(newEmployees);
+                product.setPSU(newEmployees);
                 break;
             case 4:
-                network.setPlotTwistScreenwriters(newEmployees);
+                product.setGPU(newEmployees);
                 break;
         }
     }
 
     public static void calculateTotalCost(int company, float accumulatedSalary) {
-        TelevisionNetwork tv = getTelevisionNetwork(company);
+        PcProduct tv = getPcProduct(company);
         tv.setTotalCost(tv.getTotalCost() + accumulatedSalary);
     }
 
     public static void calculateTotalEarnings(int company) {
-        TelevisionNetwork tv = getTelevisionNetwork(company);
-        float earning = (tv.getNumNormalChapters() * ImportantConstants.profitPerChapter[company][0])
-                + (tv.getNumChaptersWithPlotTwist() * ImportantConstants.profitPerChapter[company][1]);
-        tv.setEarning(earning);
+        PcProduct pc = getPcProduct(company);
+        float earning = (pc.getNumNormalChapters() * ImportantConstants.profitPerChapter[company][0])
+                + (pc.getNumChaptersWithPlotTwist() * ImportantConstants.profitPerChapter[company][1]);
+        pc.setEarning(earning);
     }
 
     public static void calculateProfit(int company) {
-        TelevisionNetwork tv = getTelevisionNetwork(company);
-        float profit = tv.getEarning() - tv.getTotalCost();
-        tv.setProfit(profit);
+        PcProduct pc = getPcProduct(company);
+        float profit = pc.getEarning() - pc.getTotalCost();
+        pc.setProfit(profit);
     }
 }
